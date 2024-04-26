@@ -40,7 +40,8 @@ export class ModifierOffreComponent implements OnInit {
 
   modifierOffre(): void {
     if (this.offre) {
-      this.offreService.saveOffre(this.offre).subscribe(
+      this.offreService.saveOffre(this.offre, 'username').subscribe(
+
         () => {
           console.log('Offre modifiée avec succès !');
           this.router.navigate(['/offres']); // Rediriger vers la liste des offres après la modification réussie

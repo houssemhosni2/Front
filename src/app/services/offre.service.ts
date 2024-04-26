@@ -9,6 +9,7 @@ import { Offre } from '../models/offre';
 export class OffreService {
 
   private baseUrl = 'http://localhost:9090/offres';
+  private adminUsername = 'aaa';
 
   constructor(private http: HttpClient) { }
 
@@ -20,13 +21,12 @@ export class OffreService {
     return this.http.get<Offre>(`${this.baseUrl}/${id}`);
   }
 
-  saveOffre(offre: Offre): Observable<Offre> {
-    return this.http.post<Offre>(`${this.baseUrl}`, offre);
+  saveOffre(offre: Offre, username: string): Observable<Offre> {
+    // Inclure le nom d'utilisateur dans la requête
+    return this.http.post<Offre>(`${this.baseUrl}?username=${this.adminUsername}`, offre);
   }
   
-
   deleteOffre(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
-  
 }

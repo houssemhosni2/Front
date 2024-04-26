@@ -7,5 +7,6 @@ export interface Offre {
     competenceRequise: string;
     duree: string;
     remuneration: number;
+    userId?: number;
   }
   

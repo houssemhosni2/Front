@@ -2,7 +2,8 @@
 
 <div class="container">
     <h2>Ajouter une nouvelle offre</h2>
-    <form (submit)="saveOffre()">
+    <form (submit)="saveOffre('username')">
+
       <div class="form-group">
         <label for="titre">Titre:</label>
         <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="nouvelleOffre.titre" required>

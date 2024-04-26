@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Liste des favoris</h2>
+    
+    <!-- Affichage de la liste des favoris -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Description</th>
+          <th>Compétence Requise</th>
+          <th>Durée</th>
+          <th>Rémunération</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let offre of favoris">
+          <td>{{ offre.titre }}</td>
+          <td>{{ offre.description }}</td>
+          <td>{{ offre.competenceRequise }}</td>
+          <td>{{ offre.duree }}</td>
+          <td>{{ offre.remuneration }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

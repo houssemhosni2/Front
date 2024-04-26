@@ -20,8 +20,9 @@ export class AjouterOffreComponent {
 
   constructor(private offreService: OffreService, private router: Router) { }
 
-  saveOffre(): void {
-    this.offreService.saveOffre(this.nouvelleOffre).subscribe(() => {
+  saveOffre(username: string): void {
+    // Passer le nom d'utilisateur lors de l'appel à saveOffre
+    this.offreService.saveOffre(this.nouvelleOffre, username).subscribe(() => {
       console.log('Nouvelle offre ajoutée avec succès !');
       this.router.navigate(['/offres']); 
     }, error => {
